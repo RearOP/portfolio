@@ -1,17 +1,19 @@
 /* client/src/App.css */
 
 /* --- Fonts (keep first so Tailwind utilities inherit font) --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Slabo+27px&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
 /* --- Tailwind directives (proper usage) --- */
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /* ----------------------
    Root variables & base
    ---------------------- */
 :root {
-  --bg-primary: #E5E5DD;
+  --bg-primary: #e5e5dd;
   --text-primary: #000000;
   --text-muted: #6b7280; /* slightly darker muted color */
   --accent-primary: #000000;
@@ -20,7 +22,9 @@
 }
 
 /* Make sure the page and root are full height for pinned sections */
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   overscroll-behavior: none;
 }
@@ -38,7 +42,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
@@ -46,11 +50,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.Title {
+  font-family: "Archivo Black", sans-serif;
+}
 
 /* ----------------------
    Scrollbar (webkit)
    ---------------------- */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
@@ -66,68 +73,7 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #111;
-}
-
-/* ----------------------
-   Glassmorphism
-   ---------------------- */
-.glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36);
-  border-radius: 0.75rem;
-}
-
-/* ----------------------
-   Gradient text (single class)
-   ---------------------- */
-.gradient-text,
-.text-gradient {
-  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Text stroke helper */
-.text-stroke {
-  color: transparent;
-  -webkit-text-stroke: 1px #fff;
-}
-
-/* ----------------------
-   Animations
-   ---------------------- */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
-@keyframes glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(100, 100, 100, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(100, 100, 100, 0.3); }
-}
-
-@keyframes orbit {
-  0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
-}
-
-@keyframes pulseLine {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 0.5; }
-}
-
-@keyframes moon-glow {
-  0%, 100% { filter: brightness(1); }
-  50% { filter: brightness(1.2); }
-}
+} */
 
 /* ----------------------
    Selection
@@ -146,7 +92,9 @@ body {
    Reduced motion (accessibility)
    ---------------------- */
 @media (prefers-reduced-motion: reduce) {
-  *,*::before,*::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -155,51 +103,25 @@ body {
 }
 
 /* ----------------------
-   Canvas and 3D helpers
-   ---------------------- */
-canvas {
-  display: block;
-  outline: none;
-}
-
-.orbital-container { perspective: 1000px; }
-.orbital-element { transform-style: preserve-3d; transition: transform 0.5s ease-out; }
-
-/* ----------------------
    Scroll triggered helper (CSS fallback)
    ---------------------- */
-.scroll-triggered { opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.scroll-triggered.visible { opacity: 1; transform: translateY(0); }
-
-/* ----------------------
-   Parallax layers (semantic)
-   ---------------------- */
-.parallax-layer { position: absolute; will-change: transform; }
-.layer-1 { transform: translateZ(-100px) scale(2); }
-.layer-2 { transform: translateZ(-50px) scale(1.5); }
-.layer-3 { transform: translateZ(0px) scale(1); }
-
-/* ----------------------
-   Glow utilities
-   ---------------------- */
-.glow-purple { box-shadow: 0 0 20px rgba(100, 100, 100, 0.5); }
-.glow-pink   { box-shadow: 0 0 20px rgba(100, 100, 100, 0.5); }
-
-/* ----------------------
-   Grid background
-   ---------------------- */
-.bg-grid-pattern {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size: 50px 50px;
+.scroll-triggered {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.scroll-triggered.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ----------------------
    Cursor utilities
    ---------------------- */
 /* utility class expected by JS or GSAP to hint element wants custom cursor */
-.interactive-cursor { cursor: none; }
+.interactive-cursor {
+  cursor: none;
+}
 
 /* base custom cursor */
 .custom-cursor {
@@ -234,7 +156,9 @@ canvas {
    Small helpers used in JS/GSAP code
    ---------------------- */
 /* your JS/markup earlier referenced `will-change-transform` */
-.will-change-transform { will-change: transform; }
+.will-change-transform {
+  will-change: transform;
+}
 
 /* Scroll progress bars */
 .scroll-progress-bar {

@@ -7,9 +7,6 @@
   --accent-3: #fcdca6;
 }
 
-body {
-  font-family: "DM Mono";
-}
 
 h1 {
   font-size: 1.5rem;
@@ -243,6 +240,7 @@ section {
   font-size: 1rem;
   background-color: var(--light2);
   border-radius: 0.25rem;
+  font-family: "DM Mono";
 }
 
 #card-1 {

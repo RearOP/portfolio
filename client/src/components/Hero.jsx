@@ -13,40 +13,15 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 " />
-
-      {/* Animated background elements */}
-      {/* <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-64 h-64 rounded-full  blur-3xl"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -100, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 20 + i * 5,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-        ))}
-      </div> */}
-
       {/* Content */}
       <div className="container mx-auto px-4 z-10 relative">
-        <div className="flex flex-col items-center justify-center text-center">
-          <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4"
+        <div className="flex flex-col items-center justify-center text-center title-body">
+          <motion.div
+            className="Title text-2xl md:text-4xl lg:text-6xl font-bold mb-4"
             style={{ transformOrigin: "center center" }}
           >
-            Alex Morgan
-          </motion.h1>
+            Mohsin Ansari
+          </motion.div>
 
           <motion.p
             ref={subtitleRef}
@@ -108,10 +83,7 @@ const Hero = () => {
         </div>
       </motion.div>
 
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-2 h-2 bg-gray-400 rounded-full animate-ping" />
-      <div className="absolute top-32 right-16 w-1 h-1 bg-gray-300 rounded-full animate-pulse" />
-      <div className="absolute bottom-32 left-20 w-1 h-1 bg-gray-300 rounded-full animate-bounce" />
+
     </section>
   );
 };

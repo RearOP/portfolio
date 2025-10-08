@@ -7,7 +7,8 @@ import Hero from "../components/Hero";
 import About from "./About";
 import Contact from "./Contact";
 import ImageCursorTrail from "../components/ui/image-cursortrail";
-// import HomeProjects from "../components/HomeProjects";
+import "../styles/ProjectCards.css";
+import ProjectCard from "../components/ProjectCard";
 gsap.registerPlugin(ScrollTrigger);
 
 const images = [
@@ -302,6 +303,9 @@ const Home = () => {
             <h1 className="text-5xl">This is services</h1>
           </div>
         </section>
+        <section className="projects min-h-screen">
+          <ProjectCard />
+        </section>
         <section className="cards" ref={cardsRef}>
           <div className="cards-container">
             <div className="card" id="card-1">
@@ -408,6 +412,7 @@ const Home = () => {
             </div>
           </div>
         </section>
+        
         <section className="outro">
           <Contact />
         </section>

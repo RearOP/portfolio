@@ -19,12 +19,12 @@ import "./styles/HomeCard.css";
 function App() {
   return (
     <>
-      <AuthProvider>
+      {/* <AuthProvider>
         <Router>
           <div className="App">
-            <CursorEffect />
+            <CursorEffect /> */}
             {/* <LoadingScreen /> */}
-            <Navbar />
+            {/* <Navbar />
             <AnimatePresence mode="wait">
               <Routes>
                 <Route path="/" element={<Home />} />
@@ -44,8 +44,8 @@ function App() {
             </AnimatePresence>
           </div>
         </Router>
-      </AuthProvider>
-      {/* <Home /> */}
+      </AuthProvider> */}
+      <Home />
     </>
   );
 }
